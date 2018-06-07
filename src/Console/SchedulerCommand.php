@@ -1,24 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: afriedrich
- * Date: 01.06.18
- * Time: 12:40
- */
 
 namespace KiwiSuite\Scheduler\Console;
 
 
+use Cocur\BackgroundProcess\BackgroundProcess;
 use Cron\CronExpression;
 use KiwiSuite\Contract\Command\CommandInterface;
-use KiwiSuite\Scheduler\Scheduler;
 use KiwiSuite\Scheduler\Task\TaskMapping;
 use KiwiSuite\Scheduler\Task\TaskSubManager;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Process\Process;
+use KiwiSuite\Scheduler\Expression\SchedulerExpression;
+
 
 class SchedulerCommand extends Command implements CommandInterface
 {
@@ -37,20 +31,20 @@ class SchedulerCommand extends Command implements CommandInterface
 
     protected function configure()
     {
+
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         foreach ($this->taskMapping->getMapping() as $tasks) {
             $task = $this->taskSubManager->get($tasks);
-            $cron = CronExpression::factory($task->schedule(new Scheduler()));
+            $taskName = $task->getName();
+            $cron = CronExpression::factory($task->schedule(new SchedulerExpression()));
             if ($cron->isDue()) {
-                $process = new Process($task->task());
+                $process = new BackgroundProcess('php fruit scheduler:exec '.$taskName);
                 $process->run();
             }
         }
-
-
     }
 
     public static function getCommandName()
