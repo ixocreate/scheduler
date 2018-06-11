@@ -21,17 +21,18 @@ class TestTask implements TaskInterface
 
     public function task(): string
     {
-        return 'task:task-task1';
+        return 'task:task-1';
     }
 
     public function options(): ?array
     {
-        return null;
+        $options = array();
+        return $options;
     }
 
     public function lock(): bool
     {
-        return false;
+        return true;
     }
 
     public function log(): ?string

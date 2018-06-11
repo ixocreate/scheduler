@@ -31,7 +31,7 @@ class BigTask implements TaskInterface
 
     public function lock(): bool
     {
-        return null;
+        return true;
     }
 
     public function log(): ?string

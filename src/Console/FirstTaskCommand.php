@@ -10,6 +10,7 @@ namespace KiwiSuite\Scheduler\Console;
 
 
 use KiwiSuite\Contract\Command\CommandInterface;
+use KiwiSuite\Scheduler\SchedulerMonitor;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;

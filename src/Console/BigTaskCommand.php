@@ -32,7 +32,7 @@ class BigTaskCommand extends Command implements CommandInterface
         chdir(getcwd() . '/scheduler/');
         $file = fopen('task-big.txt', 'a');
 
-        for ($i = 0; $i <= 300; $i++) {
+        for ($i = 0; $i <= 15; $i++) {
             fwrite($file, $i . ' --- ' . \date("h:i:sa") . PHP_EOL);
             sleep(1);
         }
