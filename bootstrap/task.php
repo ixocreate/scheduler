@@ -1,10 +1,8 @@
 <?php
-namespace App;
+declare(strict_types=1);
 
-/**@var TaskConfigurator $task */
-use KiwiSuite\Scheduler\Task\Tasks\BigTask;
+/** @var TaskConfigurator $task */
+use KiwiSuite\Scheduler\Task\Tasks\CountTask;
 use KiwiSuite\Scheduler\Task\TaskConfigurator;
-use KiwiSuite\Scheduler\Task\Tasks\TestTask;
 
-$task->addTask(TestTask::class);
-$task->addTask(BigTask::class);
+$task->addTask(CountTask::class);

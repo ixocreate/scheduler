@@ -7,7 +7,7 @@ namespace KiwiSuite\Scheduler\Task;
 
 use KiwiSuite\Contract\Application\SerializableServiceInterface;
 
-class TaskMapping implements SerializableServiceInterface
+final class TaskMapping implements SerializableServiceInterface
 {
     /**
      * @var array

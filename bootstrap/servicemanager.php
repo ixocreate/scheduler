@@ -2,9 +2,9 @@
 declare(strict_types=1);
 
 
-use KiwiSuite\Scheduler\Task\TaskSubManager;
-use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
 
 /** @var ServiceManagerConfigurator $serviceManager */
+use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
+use KiwiSuite\Scheduler\Task\TaskSubManager;
 
 $serviceManager->addSubManager(TaskSubManager::class);

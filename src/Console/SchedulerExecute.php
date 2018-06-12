@@ -5,8 +5,8 @@ namespace KiwiSuite\Scheduler\Console;
 
 use Cocur\BackgroundProcess\BackgroundProcess;
 use KiwiSuite\Contract\Command\CommandInterface;
-use KiwiSuite\Scheduler\SchedulerMonitor;
-use KiwiSuite\Scheduler\Task\TaskInterface;
+use KiwiSuite\Scheduler\Task\CallTaskInterface;
+use KiwiSuite\Scheduler\Task\CommandTaskInterface;
 use KiwiSuite\Scheduler\Task\TaskMapping;
 use KiwiSuite\Scheduler\Task\TaskSubManager;
 use Symfony\Component\Console\Command\Command;
@@ -14,13 +14,12 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Lock\Factory;
-use Symfony\Component\Lock\Lock;
 use Symfony\Component\Lock\Store\SemaphoreStore;
-use Symfony\Component\Process\Process;
 
 
-class SchedulerExecuteCommand extends Command implements CommandInterface
+final class SchedulerExecute extends Command implements CommandInterface
 {
+
     /**
      * @var TaskMapping
      */
@@ -32,7 +31,7 @@ class SchedulerExecuteCommand extends Command implements CommandInterface
     private $taskSubManager;
 
     /**
-     * @var TaskInterface
+     * @var mixed
      */
     private $task;
 
@@ -41,17 +40,17 @@ class SchedulerExecuteCommand extends Command implements CommandInterface
      */
     private $process;
 
-    /**
-     * @var Lock
-     */
-    private $lock;
-
     public function __construct(TaskMapping $taskMapping, TaskSubManager $taskSubManager)
     {
         $this->taskMapping = $taskMapping;
         $this->taskSubManager = $taskSubManager;
 
         parent::__construct(self::getCommandName());
+    }
+
+    public static function getCommandName()
+    {
+        return 'scheduler:exec';
     }
 
     protected function configure()
@@ -68,24 +67,37 @@ class SchedulerExecuteCommand extends Command implements CommandInterface
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $command = $this->buildCommand();
-        $this->process = new Process($command);
-        if (($this->task)->lock() && $this->lock === null) {
-            $this->setUpLock();
+        $build = null;
+        if ($this->task instanceof CallTaskInterface) {
+            $build = $this->buildCall();
         }
-        if ($this->lock->isAcquired()) {
-            return;
+        if ($this->task instanceof CommandTaskInterface) {
+            $build = $this->buildCommand();
         }
-        $this->lock->acquire();
 
+        $this->process = new BackgroundProcess($build);
+
+        if ($this->task->lock()) {
+            $this->setUpLock($build);
+        }
+        if (!$this->task->lock()) {
+            $this->process->run();
+        }
     }
 
-    public static function getCommandName()
+    private function buildCommand()
     {
-        return 'scheduler:exec';
+        $command = 'php fruit ' . $this->task->run();
+        return $command;
     }
 
-    private function setUpTask($taskName)
+    private function buildCall()
+    {
+        $call = 'php fruit scheduler:exec-call '.$this->task->getName();
+        return $call;
+    }
+
+    private function setUpTask(string $taskName)
     {
         $tasks = [];
         $namespace = [];
@@ -96,27 +108,21 @@ class SchedulerExecuteCommand extends Command implements CommandInterface
         return $this->taskSubManager->get($key);
     }
 
-    private function buildCommand()
-    {
-        $command = 'php fruit ' . ($this->task)->task();
-        if ($this->task->options() != null || empty($this->task->options()) === false) {
-            $options = implode(' ', ($this->task)->options());
-            $command = $command.' '.$options;
-        }
-        return $command;
-    }
-
-    private function setUpLock()
+    private function setUpLock($build)
     {
         $store = new SemaphoreStore();
         $factory = new Factory($store);
+        $lock = $factory->createLock($build);
 
-        $this->lock = $factory->createLock($this->buildCommand());
+        if ($lock->acquire()) {
+            $this->process->run();
+            try {
+                while ($this->process->isRunning()) {
+                    $lock->refresh();
+                }
+            } finally {
+                $lock->release();
+            }
+        }
     }
-
-    private function checkLock()
-    {
-
-    }
-
 }

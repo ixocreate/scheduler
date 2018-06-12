@@ -9,7 +9,7 @@ use KiwiSuite\Contract\Application\ServiceRegistryInterface;
 use KiwiSuite\ServiceManager\Factory\AutowireFactory;
 use KiwiSuite\ServiceManager\SubManager\SubManagerConfigurator;
 
-class TaskConfigurator implements ConfiguratorInterface
+final class TaskConfigurator implements ConfiguratorInterface
 {
     private $subManagerConfigurator;
 

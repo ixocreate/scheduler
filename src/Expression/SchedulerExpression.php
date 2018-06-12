@@ -5,7 +5,7 @@ namespace KiwiSuite\Scheduler\Expression;
 
 
 
-class SchedulerExpression
+final class SchedulerExpression
 {
     public function everyMinute()
     {

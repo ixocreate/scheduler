@@ -9,7 +9,7 @@ use KiwiSuite\Contract\Application\ServiceRegistryInterface;
 use KiwiSuite\Contract\ServiceManager\ServiceManagerInterface;
 use KiwiSuite\Scheduler\BootstrapItem\TaskBootstrapItem;
 
-class Package implements PackageInterface
+final class Package implements PackageInterface
 {
     /**
      * @param ConfiguratorRegistryInterface $configuratorRegistry

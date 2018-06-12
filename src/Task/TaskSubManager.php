@@ -6,6 +6,6 @@ namespace KiwiSuite\Scheduler\Task;
 
 use KiwiSuite\ServiceManager\SubManager\SubManager;
 
-class TaskSubManager extends SubManager
+final class TaskSubManager extends SubManager
 {
 }
