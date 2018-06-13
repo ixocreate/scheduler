@@ -1,10 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: afriedrich
- * Date: 12.06.18
- * Time: 16:00
+ * kiwi-suite/media (https://github.com/kiwi-suite/scheduler)
+ *
+ * @package kiwi-suite/scheduler
+ * @see https://github.com/kiwi-suite/scheduler
+ * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @license MIT License
  */
+declare(strict_types=1);
 
 namespace KiwiSuite\Scheduler\Console;
 
@@ -34,6 +37,11 @@ final class SchedulerCall extends Command implements CommandInterface
      */
     private $task;
 
+    /**
+     * SchedulerCall constructor.
+     * @param TaskMapping $taskMapping
+     * @param TaskSubManager $taskSubManager
+     */
     public function __construct(TaskMapping $taskMapping, TaskSubManager $taskSubManager)
     {
         $this->taskMapping = $taskMapping;
@@ -42,11 +50,17 @@ final class SchedulerCall extends Command implements CommandInterface
         parent::__construct(self::getCommandName());
     }
 
+    /**
+     * @return string
+     */
     public static function getCommandName()
     {
         return 'scheduler:exec-call';
     }
 
+    /**
+     * Command Configuration
+     */
     protected function configure()
     {
         $this
@@ -54,16 +68,29 @@ final class SchedulerCall extends Command implements CommandInterface
             ->addArgument('name', InputArgument::REQUIRED);
     }
 
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     */
     protected function initialize(InputInterface $input, OutputInterface $output)
     {
         $this->task = $this->setUpTask($input->getArgument('name'));
     }
 
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     * @return int|null|void
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $this->task->task();
     }
 
+    /**
+     * @param string $taskName
+     * @return mixed
+     */
     private function setUpTask(string $taskName)
     {
         $tasks = [];
@@ -71,7 +98,7 @@ final class SchedulerCall extends Command implements CommandInterface
         foreach ($this->taskMapping->getMapping() as $task) {
             $namespace[$task] = $tasks[] = ($this->taskSubManager->get($task))->getName();
         }
-        $key = array_search($taskName, $namespace);
+        $key = \array_search($taskName, $namespace);
         return $this->taskSubManager->get($key);
     }
 
