@@ -1,4 +1,12 @@
 <?php
+/**
+ * kiwi-suite/media (https://github.com/kiwi-suite/scheduler)
+ *
+ * @package kiwi-suite/scheduler
+ * @see https://github.com/kiwi-suite/scheduler
+ * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @license MIT License
+ */
 declare(strict_types=1);
 
 namespace KiwiSuite\Scheduler\Task;
@@ -11,28 +19,48 @@ use KiwiSuite\ServiceManager\SubManager\SubManagerConfigurator;
 
 final class TaskConfigurator implements ConfiguratorInterface
 {
+    /**
+     * @var SubManagerConfigurator
+     */
     private $subManagerConfigurator;
 
+    /**
+     * TaskConfigurator constructor.
+     */
     public function __construct()
     {
         $this->subManagerConfigurator = new SubManagerConfigurator(TaskSubManager::class, TaskInterface::class);
     }
 
+    /**
+     * @return SubManagerConfigurator
+     */
     public function getManagerConfigurator()
     {
         return $this->subManagerConfigurator;
     }
 
+    /**
+     * @param string $action
+     * @param string $factory
+     */
     public function addTask(string $action, string $factory = AutowireFactory::class)
     {
         $this->subManagerConfigurator->addFactory($action, $factory);
     }
 
+    /**
+     * @param string $directory
+     * @param bool $recursive
+     */
     public function addDirectory(string $directory, bool $recursive)
     {
         $this->subManagerConfigurator->addDirectory($directory, $recursive);
     }
 
+    /**
+     * @return TaskMapping
+     */
     public function getTaskMapping()
     {
         $config = $this->subManagerConfigurator;
