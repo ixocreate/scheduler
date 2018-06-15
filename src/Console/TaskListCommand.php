@@ -5,7 +5,7 @@ namespace KiwiSuite\Scheduler\Console;
 
 
 use KiwiSuite\Contract\Command\CommandInterface;
-use KiwiSuite\Scheduler\Task\TaskMapping;
+use KiwiSuite\Scheduler\Task\TaskSubManager;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -14,17 +14,16 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 final class TaskListCommand extends Command implements CommandInterface
 {
     /**
-     * @var TaskMapping
+     * @var TaskSubManager
      */
-    private $taskMapping;
+    private $taskSubManager;
 
     /**
      * TaskListCommand constructor.
-     * @param TaskMapping $taskMapping
+     * @param TaskSubManager $taskSubManager
      */
-    public function __construct(TaskMapping $taskMapping)
+    public function __construct(TaskSubManager $taskSubManager)
     {
-        $this->taskMapping = $taskMapping;
         parent::__construct(self::getCommandName());
     }
 
@@ -43,7 +42,7 @@ final class TaskListCommand extends Command implements CommandInterface
         $io = new SymfonyStyle($input, $output);
 
         $data = [];
-        foreach ($this->taskMapping->getMapping() as $name => $namespace) {
+        foreach (array_keys($this->taskSubManager->getServiceManagerConfig()->getNamedServices()) as $name) {
             $data[] = [
                 $name,
             ];
