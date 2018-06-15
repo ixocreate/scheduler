@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-
+namespace KiwiSuite\Scheduler;
 
 /** @var ServiceManagerConfigurator $serviceManager */
 use KiwiSuite\ServiceManager\ServiceManagerConfigurator;
