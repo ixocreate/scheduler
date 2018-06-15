@@ -24,6 +24,7 @@ final class TaskListCommand extends Command implements CommandInterface
      */
     public function __construct(TaskSubManager $taskSubManager)
     {
+        $this->taskSubManager = $taskSubManager;
         parent::__construct(self::getCommandName());
     }
 
