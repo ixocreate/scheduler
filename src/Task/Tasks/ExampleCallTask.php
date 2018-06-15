@@ -24,16 +24,26 @@ class ExampleCallTask implements TaskInterface, CallTaskInterface
 
     }
 
-    public static function getName(): string
+    /**
+     * @return string
+     */
+    public static function serviceName(): string
     {
         return 'ExampleCallTask';
     }
 
+    /**
+     * @param SchedulerExpression $expression
+     * @return string
+     */
     public function schedule(SchedulerExpression $expression)
     {
-        return $expression->everyFiveMinutes();
+        return $expression->everyMinute();
     }
 
+    /**
+     * @return bool
+     */
     public function lock(): bool
     {
         return true;

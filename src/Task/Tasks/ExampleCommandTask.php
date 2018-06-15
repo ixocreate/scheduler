@@ -10,22 +10,34 @@ use KiwiSuite\Scheduler\Task\TaskInterface;
 
 class ExampleCommandTask implements TaskInterface, CommandTaskInterface
 {
-
+    /**
+     * @return string
+     */
     public function run(): string
     {
-        return 'some:command';
+        return 'media:generate-delegator Bla';
     }
 
-    public static function getName(): string
+    /**
+     * @return string
+     */
+    public static function serviceName(): string
     {
         return 'ExampleCommandTask';
     }
 
+    /**
+     * @param SchedulerExpression $expression
+     * @return string
+     */
     public function schedule(SchedulerExpression $expression)
     {
         return $expression->everyMinute();
     }
 
+    /**
+     * @return bool
+     */
     public function lock(): bool
     {
         return true;

@@ -11,12 +11,11 @@ declare(strict_types=1);
 
 namespace KiwiSuite\Scheduler\Task;
 
+use KiwiSuite\Contract\ServiceManager\NamedServiceInterface;
 use KiwiSuite\Scheduler\Expression\SchedulerExpression;
 
-interface TaskInterface
+interface TaskInterface extends NamedServiceInterface
 {
-    public static function getName(): string;
-
     public function schedule(SchedulerExpression $expression);
 
     public function lock(): bool;

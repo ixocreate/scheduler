@@ -59,31 +59,10 @@ final class TaskConfigurator implements ConfiguratorInterface
     }
 
     /**
-     * @return TaskMapping
-     */
-    public function getTaskMapping()
-    {
-        $config = $this->subManagerConfigurator;
-
-        $factories = $config->getServiceManagerConfig()->getFactories();
-
-        $taskMapping = [];
-        foreach ($factories as $id => $factory) {
-            if (!\is_subclass_of($id, TaskInterface::class, true)) {
-                throw new \InvalidArgumentException(\sprintf("'%s' doesn't implement '%s'", $id, TaskInterface::class));
-            }
-            $name = \forward_static_call([$id, 'getName']);
-            $taskMapping[$name] = $id;
-        }
-
-        return new TaskMapping($taskMapping);
-    }
-    /**
      * @param ServiceRegistryInterface $serviceRegistry
      */
     public function registerService(ServiceRegistryInterface $serviceRegistry): void
     {
-        $serviceRegistry->add(TaskMapping::class, $this->getTaskMapping());
         $this->subManagerConfigurator->registerService($serviceRegistry);
     }
 }
