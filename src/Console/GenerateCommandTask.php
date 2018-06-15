@@ -34,21 +34,34 @@ use KiwiSuite\Scheduler\Task\TaskInterface;
 final class %s implements TaskInterface, CommandTaskInterface
 {
 
+    /**
+     * @return string
+     */
     public function run(): string
     {
-    
+        return 'some:command';
     }
 
-    public static function getName(): string
+    /**
+     * @return string
+     */
+    public static function serviceName(): string
     {
         return '%s';
     }
 
+    /**
+     * @param SchedulerExpression $expression
+     * @return string
+     */
     public function schedule(SchedulerExpression $expression)
     {
         return $expression->cron();
     }
 
+    /**
+     * @return bool
+     */
     public function lock(): bool
     {
         return true;
