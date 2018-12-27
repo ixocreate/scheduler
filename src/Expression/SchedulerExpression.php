@@ -9,7 +9,7 @@
  */
 declare(strict_types=1);
 
-namespace KiwiSuite\Scheduler\Expression;
+namespace Ixocreate\Scheduler\Expression;
 
 
 

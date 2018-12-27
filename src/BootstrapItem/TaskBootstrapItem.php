@@ -9,12 +9,12 @@
  */
 declare(strict_types=1);
 
-namespace KiwiSuite\Scheduler\BootstrapItem;
+namespace Ixocreate\Scheduler\BootstrapItem;
 
 
-use KiwiSuite\Contract\Application\BootstrapItemInterface;
-use KiwiSuite\Contract\Application\ConfiguratorInterface;
-use KiwiSuite\Scheduler\Task\TaskConfigurator;
+use Ixocreate\Contract\Application\BootstrapItemInterface;
+use Ixocreate\Contract\Application\ConfiguratorInterface;
+use Ixocreate\Scheduler\Task\TaskConfigurator;
 
 final class TaskBootstrapItem implements BootstrapItemInterface
 {

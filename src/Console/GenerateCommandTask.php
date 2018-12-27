@@ -9,10 +9,10 @@
  */
 declare(strict_types=1);
 
-namespace KiwiSuite\Scheduler\Console;
+namespace Ixocreate\Scheduler\Console;
 
 
-use KiwiSuite\Contract\Command\CommandInterface;
+use Ixocreate\Contract\Command\CommandInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -27,9 +27,9 @@ declare(strict_types=1);
 namespace App\Scheduler\Task;
 
 
-use KiwiSuite\Scheduler\Expression\SchedulerExpression;
-use KiwiSuite\Scheduler\Task\CommandTaskInterface;
-use KiwiSuite\Scheduler\Task\TaskInterface;
+use Ixocreate\Scheduler\Expression\SchedulerExpression;
+use Ixocreate\Scheduler\Task\CommandTaskInterface;
+use Ixocreate\Scheduler\Task\TaskInterface;
 
 final class %s implements TaskInterface, CommandTaskInterface
 {

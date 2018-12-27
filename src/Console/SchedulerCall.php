@@ -9,12 +9,12 @@
  */
 declare(strict_types=1);
 
-namespace KiwiSuite\Scheduler\Console;
+namespace Ixocreate\Scheduler\Console;
 
 
-use KiwiSuite\Contract\Command\CommandInterface;
+use Ixocreate\Contract\Command\CommandInterface;
 use Symfony\Component\Console\Command\Command;
-use KiwiSuite\Scheduler\Task\TaskSubManager;
+use Ixocreate\Scheduler\Task\TaskSubManager;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;

@@ -9,10 +9,10 @@
  */
 declare(strict_types=1);
 
-namespace KiwiSuite\Scheduler\Task;
+namespace Ixocreate\Scheduler\Task;
 
-use KiwiSuite\Contract\ServiceManager\NamedServiceInterface;
-use KiwiSuite\Scheduler\Expression\SchedulerExpression;
+use Ixocreate\Contract\ServiceManager\NamedServiceInterface;
+use Ixocreate\Scheduler\Expression\SchedulerExpression;
 
 interface TaskInterface extends NamedServiceInterface
 {

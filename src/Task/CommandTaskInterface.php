@@ -9,7 +9,7 @@
  */
 declare(strict_types=1);
 
-namespace KiwiSuite\Scheduler\Task;
+namespace Ixocreate\Scheduler\Task;
 
 
 interface CommandTaskInterface

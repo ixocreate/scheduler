@@ -9,13 +9,13 @@
  */
 declare(strict_types=1);
 
-namespace KiwiSuite\Scheduler\Console;
+namespace Ixocreate\Scheduler\Console;
 
 use Cocur\BackgroundProcess\BackgroundProcess;
-use KiwiSuite\Contract\Command\CommandInterface;
-use KiwiSuite\Scheduler\Task\CallTaskInterface;
-use KiwiSuite\Scheduler\Task\CommandTaskInterface;
-use KiwiSuite\Scheduler\Task\TaskSubManager;
+use Ixocreate\Contract\Command\CommandInterface;
+use Ixocreate\Scheduler\Task\CallTaskInterface;
+use Ixocreate\Scheduler\Task\CommandTaskInterface;
+use Ixocreate\Scheduler\Task\TaskSubManager;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

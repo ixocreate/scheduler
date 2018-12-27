@@ -9,17 +9,17 @@
  */
 declare(strict_types=1);
 
-namespace KiwiSuite\Scheduler\Console;
+namespace Ixocreate\Scheduler\Console;
 
 use Cocur\BackgroundProcess\BackgroundProcess;
 use Cron\CronExpression;
-use KiwiSuite\Contract\Command\CommandInterface;
-use KiwiSuite\Scheduler\Task\TaskInterface;
-use KiwiSuite\Scheduler\Task\TaskSubManager;
+use Ixocreate\Contract\Command\CommandInterface;
+use Ixocreate\Scheduler\Task\TaskInterface;
+use Ixocreate\Scheduler\Task\TaskSubManager;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use KiwiSuite\Scheduler\Expression\SchedulerExpression;
+use Ixocreate\Scheduler\Expression\SchedulerExpression;
 
 
 

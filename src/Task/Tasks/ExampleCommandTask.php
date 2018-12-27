@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace KiwiSuite\Scheduler\Task\Tasks;
+namespace Ixocreate\Scheduler\Task\Tasks;
 
 
-use KiwiSuite\Scheduler\Expression\SchedulerExpression;
-use KiwiSuite\Scheduler\Task\CommandTaskInterface;
-use KiwiSuite\Scheduler\Task\TaskInterface;
+use Ixocreate\Scheduler\Expression\SchedulerExpression;
+use Ixocreate\Scheduler\Task\CommandTaskInterface;
+use Ixocreate\Scheduler\Task\TaskInterface;
 
 class ExampleCommandTask implements TaskInterface, CommandTaskInterface
 {
