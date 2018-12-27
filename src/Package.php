@@ -1,12 +1,10 @@
 <?php
 /**
- * kiwi-suite/media (https://github.com/kiwi-suite/scheduler)
- *
- * @package kiwi-suite/scheduler
- * @see https://github.com/kiwi-suite/scheduler
- * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
  * @license MIT License
  */
+
 declare(strict_types=1);
 
 namespace Ixocreate\Scheduler;
@@ -71,7 +69,7 @@ final class Package implements PackageInterface
     public function getBootstrapItems(): ?array
     {
         return [
-            TaskBootstrapItem::class
+            TaskBootstrapItem::class,
         ];
     }
 

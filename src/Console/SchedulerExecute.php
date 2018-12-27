@@ -1,12 +1,10 @@
 <?php
 /**
- * kiwi-suite/media (https://github.com/kiwi-suite/scheduler)
- *
- * @package kiwi-suite/scheduler
- * @see https://github.com/kiwi-suite/scheduler
- * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
  * @license MIT License
  */
+
 declare(strict_types=1);
 
 namespace Ixocreate\Scheduler\Console;
@@ -23,10 +21,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Lock\Factory;
 use Symfony\Component\Lock\Store\SemaphoreStore;
 
-
 final class SchedulerExecute extends Command implements CommandInterface
 {
-
     /**
      * @var TaskSubManager
      */
@@ -118,7 +114,7 @@ final class SchedulerExecute extends Command implements CommandInterface
      */
     private function buildCall()
     {
-        $call = 'php fruit scheduler:exec-call '.$this->task->serviceName();
+        $call = 'php fruit scheduler:exec-call ' . $this->task->serviceName();
         return $call;
     }
 

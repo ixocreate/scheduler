@@ -1,12 +1,10 @@
 <?php
 /**
- * kiwi-suite/media (https://github.com/kiwi-suite/scheduler)
- *
- * @package kiwi-suite/scheduler
- * @see https://github.com/kiwi-suite/scheduler
- * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
  * @license MIT License
  */
+
 declare(strict_types=1);
 
 namespace Ixocreate\Scheduler\Console;
@@ -21,8 +19,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Ixocreate\Scheduler\Expression\SchedulerExpression;
 
-
-
 final class SchedulerRun extends Command implements CommandInterface
 {
     /**
@@ -34,7 +30,6 @@ final class SchedulerRun extends Command implements CommandInterface
      * @var TaskInterface
      */
     private $task;
-
 
     /**
      * SchedulerRun constructor.
@@ -64,7 +59,7 @@ final class SchedulerRun extends Command implements CommandInterface
             $taskName = $this->task->serviceName();
             $cron = CronExpression::factory($this->task->schedule(new SchedulerExpression()));
             if ($cron->isDue()) {
-                $process = new BackgroundProcess('php fruit scheduler:exec '.$taskName);
+                $process = new BackgroundProcess('php fruit scheduler:exec ' . $taskName);
                 $process->run();
             }
         }
@@ -77,6 +72,4 @@ final class SchedulerRun extends Command implements CommandInterface
     {
         return "scheduler:run";
     }
-
-
 }

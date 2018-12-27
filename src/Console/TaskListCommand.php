@@ -1,8 +1,13 @@
 <?php
+/**
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
+ * @license MIT License
+ */
+
 declare(strict_types=1);
 
 namespace Ixocreate\Scheduler\Console;
-
 
 use Ixocreate\Contract\Command\CommandInterface;
 use Ixocreate\Scheduler\Task\TaskSubManager;
@@ -43,7 +48,7 @@ final class TaskListCommand extends Command implements CommandInterface
         $io = new SymfonyStyle($input, $output);
 
         $data = [];
-        foreach (array_keys($this->taskSubManager->getServiceManagerConfig()->getNamedServices()) as $name) {
+        foreach (\array_keys($this->taskSubManager->getServiceManagerConfig()->getNamedServices()) as $name) {
             $data[] = [
                 $name,
             ];

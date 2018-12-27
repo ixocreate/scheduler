@@ -1,16 +1,13 @@
 <?php
 /**
- * kiwi-suite/media (https://github.com/kiwi-suite/scheduler)
- *
- * @package kiwi-suite/scheduler
- * @see https://github.com/kiwi-suite/scheduler
- * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
+ * @link https://github.com/ixocreate
+ * @copyright IXOCREATE GmbH
  * @license MIT License
  */
+
 declare(strict_types=1);
 
 namespace Ixocreate\Scheduler\Console;
-
 
 use Ixocreate\Contract\Command\CommandInterface;
 use Symfony\Component\Console\Command\Command;
@@ -101,8 +98,8 @@ EOD;
     /**
      * @param InputInterface $input
      * @param OutputInterface $output
-     * @return int|null|void
      * @throws \Exception
+     * @return int|null|void
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
@@ -127,7 +124,8 @@ EOD;
     {
         \file_put_contents(
             \getcwd() . '/src/App/Scheduler/Task/' . \trim(\ucfirst($input->getArgument('name'))) . '.php',
-            \sprintf($this->template,
+            \sprintf(
+                $this->template,
                 \trim(\ucfirst($input->getArgument('name'))),
                 \trim(\ucfirst($input->getArgument('name')))
             )
