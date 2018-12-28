@@ -1,6 +1,6 @@
 # IXOCREATE scheduler
 
-[![Build Status](https://travis-ci.org/ixocreate/scheduler.svg?branch=master)](https://travis-ci.org/ixocreate/scheduler)
+[![Build Status](https://travis-ci.com/ixocreate/scheduler.svg?branch=master)](https://travis-ci.com/ixocreate/scheduler)
 [![Coverage Status](https://coveralls.io/repos/github/ixocreate/scheduler/badge.svg?branch=develop)](https://coveralls.io/github/ixocreate/scheduler?branch=develop)
 [![Packagist](https://img.shields.io/packagist/v/ixocreate/scheduler.svg)](https://packagist.org/packages/ixocreate/scheduler)
 [![Packagist Pre Release](https://img.shields.io/packagist/vpre/ixocreate/scheduler.svg)](https://packagist.org/packages/ixocreate/scheduler)
