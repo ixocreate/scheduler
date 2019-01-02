@@ -105,7 +105,7 @@ final class SchedulerExecute extends Command implements CommandInterface
      */
     private function buildCommand()
     {
-        $command = 'php fruit ' . $this->task->run();
+        $command = 'php ixocreate ' . $this->task->run();
         return $command;
     }
 
@@ -114,7 +114,7 @@ final class SchedulerExecute extends Command implements CommandInterface
      */
     private function buildCall()
     {
-        $call = 'php fruit scheduler:exec-call ' . $this->task->serviceName();
+        $call = 'php ixocreate scheduler:exec-call ' . $this->task->serviceName();
         return $call;
     }
 

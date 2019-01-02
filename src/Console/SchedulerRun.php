@@ -59,7 +59,7 @@ final class SchedulerRun extends Command implements CommandInterface
             $taskName = $this->task->serviceName();
             $cron = CronExpression::factory($this->task->schedule(new SchedulerExpression()));
             if ($cron->isDue()) {
-                $process = new BackgroundProcess('php fruit scheduler:exec ' . $taskName);
+                $process = new BackgroundProcess('php ixocreate scheduler:exec ' . $taskName);
                 $process->run();
             }
         }
