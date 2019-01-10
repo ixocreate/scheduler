@@ -10,7 +10,7 @@
     ],
     "require": {
         "php": "^7.1",
-        "ixocreate/contract": "=1.0.0-alpha1",
+        "ixocreate/contract": "dev-develop",
         "dragonmantank/cron-expression": "^2.1",
         "symfony/lock": "^4.1",
         "cocur/background-process": "^0.7.0"
