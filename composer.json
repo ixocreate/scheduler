@@ -1,5 +1,5 @@
 {
-    "name": "ixocreate/scheduler",
+    "name": "ixocreate/scheduler-package",
     "description": "IXOCREATE scheduler integration",
     "license": "MIT",
     "type": "library",
