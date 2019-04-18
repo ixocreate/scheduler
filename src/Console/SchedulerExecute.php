@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace Ixocreate\Scheduler\Package\Console;
 
 use Cocur\BackgroundProcess\BackgroundProcess;
-use Ixocreate\Application\Console\CommandInterface;;
+use Ixocreate\Application\Console\CommandInterface;
 use Ixocreate\Scheduler\Package\Task\CallTaskInterface;
 use Ixocreate\Scheduler\Package\Task\CommandTaskInterface;
 use Ixocreate\Scheduler\Package\Task\TaskSubManager;

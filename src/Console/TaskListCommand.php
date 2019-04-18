@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Ixocreate\Scheduler\Package\Console;
 
-use Ixocreate\Application\Console\CommandInterface;;
+use Ixocreate\Application\Console\CommandInterface;
 use Ixocreate\Scheduler\Package\Task\TaskSubManager;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;

@@ -8,6 +8,8 @@
             "name": "IXOCREATE"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": "^7.1",
         "cocur/background-process": "^0.7.0",
@@ -16,9 +18,9 @@
         "symfony/lock": "^4.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.0.6",
-        "php-coveralls/php-coveralls": "^2.0",
-        "ixocreate/coding-standard": "^1.0"
+        "ixocreate/coding-standard": "^1.0",
+        "phpunit/phpunit": "^7.0",
+        "php-coveralls/php-coveralls": "^2.0"
     },
     "autoload": {
         "psr-4": {

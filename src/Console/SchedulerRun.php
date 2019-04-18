@@ -11,7 +11,7 @@ namespace Ixocreate\Scheduler\Package\Console;
 
 use Cocur\BackgroundProcess\BackgroundProcess;
 use Cron\CronExpression;
-use Ixocreate\Application\Console\CommandInterface;;
+use Ixocreate\Application\Console\CommandInterface;
 use Ixocreate\Scheduler\Package\Task\TaskInterface;
 use Ixocreate\Scheduler\Package\Task\TaskSubManager;
 use Symfony\Component\Console\Command\Command;
