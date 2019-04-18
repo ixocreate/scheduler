@@ -9,8 +9,8 @@ declare(strict_types=1);
 
 namespace Ixocreate\Scheduler\Task;
 
-use Ixocreate\ServiceManager\NamedServiceInterface;
 use Ixocreate\Scheduler\Expression\SchedulerExpression;
+use Ixocreate\ServiceManager\NamedServiceInterface;
 
 interface TaskInterface extends NamedServiceInterface
 {

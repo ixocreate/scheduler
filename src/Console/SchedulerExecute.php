@@ -40,6 +40,7 @@ final class SchedulerExecute extends Command implements CommandInterface
 
     /**
      * SchedulerExecute constructor.
+     *
      * @param TaskSubManager $taskSubManager
      */
     public function __construct(TaskSubManager $taskSubManager)

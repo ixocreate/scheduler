@@ -25,6 +25,7 @@ final class TaskListCommand extends Command implements CommandInterface
 
     /**
      * TaskListCommand constructor.
+     *
      * @param TaskSubManager $taskSubManager
      */
     public function __construct(TaskSubManager $taskSubManager)

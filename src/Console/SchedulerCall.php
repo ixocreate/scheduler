@@ -10,11 +10,11 @@ declare(strict_types=1);
 namespace Ixocreate\Scheduler\Console;
 
 use Ixocreate\Application\Console\CommandInterface;
-use Symfony\Component\Console\Command\Command;
 use Ixocreate\Scheduler\Task\TaskSubManager;
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Input\InputArgument;
 
 final class SchedulerCall extends Command implements CommandInterface
 {
@@ -30,6 +30,7 @@ final class SchedulerCall extends Command implements CommandInterface
 
     /**
      * SchedulerCall constructor.
+     *
      * @param TaskMapping $taskMapping
      * @param TaskSubManager $taskSubManager
      */
