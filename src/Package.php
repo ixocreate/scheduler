@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler;
+namespace Ixocreate\Package\Scheduler;
 
-use Ixocreate\Contract\Application\PackageInterface;
-use Ixocreate\Contract\Application\ConfiguratorRegistryInterface;
-use Ixocreate\Contract\Application\ServiceRegistryInterface;
-use Ixocreate\Contract\ServiceManager\ServiceManagerInterface;
-use Ixocreate\Scheduler\BootstrapItem\TaskBootstrapItem;
+use Ixocreate\Application\PackageInterface;
+use Ixocreate\Application\ConfiguratorRegistryInterface;
+use Ixocreate\Application\ServiceRegistryInterface;
+use Ixocreate\ServiceManager\ServiceManagerInterface;
+use Ixocreate\Package\Scheduler\BootstrapItem\TaskBootstrapItem;
 
 final class Package implements PackageInterface
 {

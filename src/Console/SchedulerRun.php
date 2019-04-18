@@ -7,17 +7,17 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler\Console;
+namespace Ixocreate\Package\Scheduler\Console;
 
 use Cocur\BackgroundProcess\BackgroundProcess;
 use Cron\CronExpression;
-use Ixocreate\Contract\Command\CommandInterface;
-use Ixocreate\Scheduler\Task\TaskInterface;
-use Ixocreate\Scheduler\Task\TaskSubManager;
+use Ixocreate\Application\Console\CommandInterface;;
+use Ixocreate\Package\Scheduler\Task\TaskInterface;
+use Ixocreate\Package\Scheduler\Task\TaskSubManager;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Ixocreate\Scheduler\Expression\SchedulerExpression;
+use Ixocreate\Package\Scheduler\Expression\SchedulerExpression;
 
 final class SchedulerRun extends Command implements CommandInterface
 {

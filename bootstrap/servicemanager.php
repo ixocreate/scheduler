@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler;
+namespace Ixocreate\Package\Scheduler;
+
+use Ixocreate\Package\Scheduler\Task\TaskSubManager;
+use Ixocreate\ServiceManager\ServiceManagerConfigurator;
 
 /** @var ServiceManagerConfigurator $serviceManager */
-use Ixocreate\ServiceManager\ServiceManagerConfigurator;
-use Ixocreate\Scheduler\Task\TaskSubManager;
-
 $serviceManager->addSubManager(TaskSubManager::class);

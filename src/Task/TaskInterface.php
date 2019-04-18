@@ -7,10 +7,10 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler\Task;
+namespace Ixocreate\Package\Scheduler\Task;
 
-use Ixocreate\Contract\ServiceManager\NamedServiceInterface;
-use Ixocreate\Scheduler\Expression\SchedulerExpression;
+use Ixocreate\ServiceManager\NamedServiceInterface;
+use Ixocreate\Package\Scheduler\Expression\SchedulerExpression;
 
 interface TaskInterface extends NamedServiceInterface
 {

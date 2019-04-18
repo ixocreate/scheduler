@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler;
+namespace Ixocreate\Package\Scheduler;
 
-/** @var \Ixocreate\ApplicationConsole\ConsoleConfigurator $console */
+/** @var \Ixocreate\Application\Console\ConsoleConfigurator $console */
 $console->addDirectory(__DIR__ . '/../src/Console', true);

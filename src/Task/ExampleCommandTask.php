@@ -7,16 +7,18 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler\Task\Tasks;
+namespace Ixocreate\Package\Scheduler\Task;
 
-use Ixocreate\Scheduler\Expression\SchedulerExpression;
-use Ixocreate\Scheduler\Task\CallTaskInterface;
-use Ixocreate\Scheduler\Task\TaskInterface;
+use Ixocreate\Package\Scheduler\Expression\SchedulerExpression;
 
-class ExampleCallTask implements TaskInterface, CallTaskInterface
+class ExampleCommandTask implements TaskInterface, CommandTaskInterface
 {
-    public function task()
+    /**
+     * @return string
+     */
+    public function run(): string
     {
+        return 'media:generate-delegator Bla';
     }
 
     /**
@@ -24,7 +26,7 @@ class ExampleCallTask implements TaskInterface, CallTaskInterface
      */
     public static function serviceName(): string
     {
-        return 'ExampleCallTask';
+        return 'ExampleCommandTask';
     }
 
     /**

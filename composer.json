@@ -1,6 +1,6 @@
 {
-    "name": "ixocreate/scheduler",
-    "description": "IXOCREATE scheduler integration",
+    "name": "ixocreate/scheduler-package",
+    "description": "IXOCREATE Scheduler Package",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -10,10 +10,10 @@
     ],
     "require": {
         "php": "^7.1",
-        "ixocreate/contract": "dev-develop",
+        "cocur/background-process": "^0.7.0",
         "dragonmantank/cron-expression": "^2.1",
-        "symfony/lock": "^4.1",
-        "cocur/background-process": "^0.7.0"
+        "ixocreate/application": "dev-consolidate",
+        "symfony/lock": "^4.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.0.6",
@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ixocreate\\Scheduler\\": "src/"
+            "Ixocreate\\Package\\Scheduler\\": "src/"
         }
     },
     "scripts": {

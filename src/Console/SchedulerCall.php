@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler\Console;
+namespace Ixocreate\Package\Scheduler\Console;
 
-use Ixocreate\Contract\Command\CommandInterface;
+use Ixocreate\Application\Console\CommandInterface;;
 use Symfony\Component\Console\Command\Command;
-use Ixocreate\Scheduler\Task\TaskSubManager;
+use Ixocreate\Package\Scheduler\Task\TaskSubManager;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;

@@ -7,9 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler\Console;
+namespace Ixocreate\Package\Scheduler\Console;
 
-use Ixocreate\Contract\Command\CommandInterface;
+use Ixocreate\Application\Console\CommandInterface;;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -19,22 +19,13 @@ final class GenerateCallTask extends Command implements CommandInterface
 {
     private $template = <<< 'EOD'
 <?php
-/**
- * kiwi-suite/media (https://github.com/kiwi-suite/scheduler)
- *
- * @package kiwi-suite/scheduler
- * @see https://github.com/kiwi-suite/scheduler
- * @copyright Copyright (c) 2010 - 2018 kiwi suite GmbH
- * @license MIT License
- */
 declare(strict_types=1);
 
 namespace App\Scheduler\Task;
 
-
-use Ixocreate\Scheduler\Expression\SchedulerExpression;
-use Ixocreate\Scheduler\Task\CallTaskInterface;
-use Ixocreate\Scheduler\Task\TaskInterface;
+use Ixocreate\Package\Scheduler\Expression\SchedulerExpression;
+use Ixocreate\Package\Scheduler\Task\CallTaskInterface;
+use Ixocreate\Package\Scheduler\Task\TaskInterface;
 
 final class %s implements TaskInterface, CallTaskInterface
 {
