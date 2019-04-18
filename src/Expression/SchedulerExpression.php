@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler\Package\Expression;
+namespace Ixocreate\Scheduler\Expression;
 
 final class SchedulerExpression
 {

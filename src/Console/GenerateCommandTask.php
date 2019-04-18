@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler\Package\Console;
+namespace Ixocreate\Scheduler\Console;
 
 use Ixocreate\Application\Console\CommandInterface;
 use Symfony\Component\Console\Command\Command;
@@ -24,9 +24,9 @@ declare(strict_types=1);
 namespace App\Scheduler\Task;
 
 
-use Ixocreate\Scheduler\Package\Expression\SchedulerExpression;
-use Ixocreate\Scheduler\Package\Task\CommandTaskInterface;
-use Ixocreate\Scheduler\Package\Task\TaskInterface;
+use Ixocreate\Scheduler\Expression\SchedulerExpression;
+use Ixocreate\Scheduler\Task\CommandTaskInterface;
+use Ixocreate\Scheduler\Task\TaskInterface;
 
 final class %s implements TaskInterface, CommandTaskInterface
 {

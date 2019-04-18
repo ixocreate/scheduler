@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler\Package\Task;
+namespace Ixocreate\Scheduler\Task;
 
 interface CallTaskInterface
 {

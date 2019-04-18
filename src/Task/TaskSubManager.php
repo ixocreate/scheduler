@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler\Package\Task;
+namespace Ixocreate\Scheduler\Task;
 
 use Ixocreate\ServiceManager\SubManager\SubManager;
 
