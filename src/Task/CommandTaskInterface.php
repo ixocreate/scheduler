@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Scheduler\Task;
+namespace Ixocreate\Scheduler\Package\Task;
 
 interface CommandTaskInterface
 {

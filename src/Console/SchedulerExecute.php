@@ -7,13 +7,13 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Scheduler\Console;
+namespace Ixocreate\Scheduler\Package\Console;
 
 use Cocur\BackgroundProcess\BackgroundProcess;
 use Ixocreate\Application\Console\CommandInterface;;
-use Ixocreate\Package\Scheduler\Task\CallTaskInterface;
-use Ixocreate\Package\Scheduler\Task\CommandTaskInterface;
-use Ixocreate\Package\Scheduler\Task\TaskSubManager;
+use Ixocreate\Scheduler\Package\Task\CallTaskInterface;
+use Ixocreate\Scheduler\Package\Task\CommandTaskInterface;
+use Ixocreate\Scheduler\Package\Task\TaskSubManager;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

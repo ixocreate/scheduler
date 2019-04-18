@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Scheduler;
+namespace Ixocreate\Scheduler\Package;
 
-use Ixocreate\Package\Scheduler\Task\TaskConfigurator;
-use Ixocreate\Package\Scheduler\Task\ExampleCallTask;
-use Ixocreate\Package\Scheduler\Task\ExampleCommandTask;
+use Ixocreate\Scheduler\Package\Task\TaskConfigurator;
+use Ixocreate\Scheduler\Package\Task\ExampleCallTask;
+use Ixocreate\Scheduler\Package\Task\ExampleCommandTask;
 
 /** @var TaskConfigurator $task */
 $task->addTask(ExampleCallTask::class);

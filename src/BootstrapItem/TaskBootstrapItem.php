@@ -7,11 +7,11 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Package\Scheduler\BootstrapItem;
+namespace Ixocreate\Scheduler\Package\BootstrapItem;
 
-use Ixocreate\Application\BootstrapItemInterface;
+use Ixocreate\Application\Bootstrap\BootstrapItemInterface;
 use Ixocreate\Application\ConfiguratorInterface;
-use Ixocreate\Package\Scheduler\Task\TaskConfigurator;
+use Ixocreate\Scheduler\Package\Task\TaskConfigurator;
 
 final class TaskBootstrapItem implements BootstrapItemInterface
 {
