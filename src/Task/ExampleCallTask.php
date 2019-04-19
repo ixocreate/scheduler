@@ -7,11 +7,9 @@
 
 declare(strict_types=1);
 
-namespace Ixocreate\Scheduler\Task\Tasks;
+namespace Ixocreate\Scheduler\Task;
 
 use Ixocreate\Scheduler\Expression\SchedulerExpression;
-use Ixocreate\Scheduler\Task\CallTaskInterface;
-use Ixocreate\Scheduler\Task\TaskInterface;
 
 class ExampleCallTask implements TaskInterface, CallTaskInterface
 {

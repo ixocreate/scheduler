@@ -95,6 +95,7 @@ final class SchedulerExpression
 
     /**
      * Runs every week on given day and time, where "day = 1" is monday and "day = 7" is sunday.
+     *
      * @param int $day
      * @param string $time
      * @return string

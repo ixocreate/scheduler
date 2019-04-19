@@ -9,7 +9,7 @@ declare(strict_types=1);
 
 namespace Ixocreate\Scheduler\Console;
 
-use Ixocreate\Contract\Command\CommandInterface;
+use Ixocreate\Application\Console\CommandInterface;
 use Ixocreate\Scheduler\Task\TaskSubManager;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -25,6 +25,7 @@ final class TaskListCommand extends Command implements CommandInterface
 
     /**
      * TaskListCommand constructor.
+     *
      * @param TaskSubManager $taskSubManager
      */
     public function __construct(TaskSubManager $taskSubManager)

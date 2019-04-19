@@ -9,11 +9,11 @@ declare(strict_types=1);
 
 namespace Ixocreate\Scheduler\Console;
 
-use Ixocreate\Contract\Command\CommandInterface;
+use Ixocreate\Application\Console\CommandInterface;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Input\InputArgument;
 
 final class GenerateCommandTask extends Command implements CommandInterface
 {

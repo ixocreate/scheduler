@@ -10,7 +10,7 @@ declare(strict_types=1);
 namespace Ixocreate\Scheduler\Console;
 
 use Cocur\BackgroundProcess\BackgroundProcess;
-use Ixocreate\Contract\Command\CommandInterface;
+use Ixocreate\Application\Console\CommandInterface;
 use Ixocreate\Scheduler\Task\CallTaskInterface;
 use Ixocreate\Scheduler\Task\CommandTaskInterface;
 use Ixocreate\Scheduler\Task\TaskSubManager;
@@ -40,6 +40,7 @@ final class SchedulerExecute extends Command implements CommandInterface
 
     /**
      * SchedulerExecute constructor.
+     *
      * @param TaskSubManager $taskSubManager
      */
     public function __construct(TaskSubManager $taskSubManager)
