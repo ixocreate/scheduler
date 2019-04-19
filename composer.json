@@ -14,7 +14,7 @@
         "php": "^7.1",
         "cocur/background-process": "^0.7.0",
         "dragonmantank/cron-expression": "^2.1",
-        "ixocreate/application": "dev-develop",
+        "ixocreate/application": "^0.1",
         "symfony/lock": "^4.1"
     },
     "require-dev": {
