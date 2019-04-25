@@ -15,7 +15,7 @@ install:
 
 script:
   - if [ $TRAVIS_PHP_VERSION = '7.2' ]; then vendor/bin/phpunit --coverage-clover build/logs/clover.xml; else vendor/bin/phpunit; fi
-  - if [ $TRAVIS_PHP_VERSION = '7.2' ]; then vendor/bin/php-cs-fixer fix --config=vendor/ixocreate/coding-standard/.php_cs -v --dry-run --using-cache=no --path-mode=intersection `git diff --name-only --diff-filter=ACMRTUXB $TRAVIS_COMMIT_RANGE`; fi
+  - if [ $TRAVIS_PHP_VERSION = '7.2' ]; then vendor/bin/php-cs-fixer fix --config=vendor/ixocreate/coding-standard/.php_cs -v --diff --dry-run --using-cache=no; fi
 
 after_success:
   - if [ $TRAVIS_PHP_VERSION = '7.2' ]; then php vendor/bin/php-coveralls -v; fi
@@ -23,4 +23,7 @@ after_success:
 notifications:
   email: false
   slack:
-    secure: "G0aznqGP5Slb/ABx8oaKRR6Sf4tlbjZnNvJpWXNt+JohDCPkIfY1idGkF4H+qGuAbH3O1cWeK2kvuGnF/oKxWaolBoTcOSuKVSURk6UcrjM7aBI6wirF5Qp8X9cuUPc3JwAZSqJIvzzPuUUz4bvXn/5m+x0mcyb1DaqgtGW2gyp8ZSrnUIMNDO21m17ZSN0UhdCk+ofqtL3VXPVokvm0mJ4vL2Sp+07wsJd4Lsy51V0M+pqnhrKUNYE4gFayukpC/2ZXLx4oLN0wdFM2qhW+WAknVJAPCiP+JrOj88CyHEVyVK4fmmupqf8MekYmncoLyAD+8FIOqpoYFK745YBefw7POZpcCfYTgjqlRpoTK4UIKTitCPnbmsXnmcxJEK7gQL8oirUxj272udoSTS6leywW0Rut3f3BhiFamTNhKLi2XxKusOi0LRiEz31ToIYyzKrCZ6xVH3ZOgAkp1IvW1gEqMNpAFA8Rg6wiDexb/iy829q1vYVzStk8u26L6TWcTZxHj2rTIUXK1jB7gvBwg1vtitZTR1PL4U+6NX0jZJ1M7gkWbm+nYeRWjv/TXT1FJ4fPhCFCTtH3m5xzHqa6EpB98qQC5+A+NNAi5D5FlE2cT1Jy99nIY5BRV0LVBKELrz35Os2zaoukKnFwa1agF5CMK+OFG/cPtLPtBYY5uX0="
+    on_success: always
+    on_failure: always
+    rooms:
+      secure: "KN7SUdKaSXFKZ6gxwEqGZW/ne+ZEaac6CfrFxXygzJL46LF2k4wJpdnsi6x8DoGayiGFtV7udBfJuC4k5Bklw1Wlyva9DqrAccU6gsE0VenUX/4ovvLn4LR/TFqOysGeNZEqA3rOsuN1AJCrMJmGv5SyiPg92h8kvSR5sW1JmMewlA7LXOt3zRSKzRDqq7zHxXa2EIMagxSL3SA95eK+GYvxn3mn6LXlWYySK3q/OOkFrkdVqVfjCn9zCaddiD8KnSuyDndURqL67kk+EVVHpvDbits4fVx1AE1mVOerjvWD3UZ/nfllc6eZKjQ8SV2DqvfW/oow/S/p/PsnPx71Tr8HSiLe/PIhrqSgvvZCwIGbD4PjSttqOMoHWpAiEgPlAahbLl4fuwzLrVKIvhigElY9pecF6AvXsSefinqVUIbNeD1TrT9sV5j2EppqIoPg1AZGe6Dmh2kGzcPFLxXK1NhlmAW2+6IfsubhIHoW3iLbMWYFKcP8KyxQrMVaSIsQl2yF5hET87CiBxBUQaxvNjHt8ppduhnV0KoHLZBgkn4kWJJCoDQb8wWIlMSkUEpb8r5YtwrATh+Q3H6QbAm5+WlFmYWzX4vMOGeSBRXJy1Jq+UIr9CKOQcmW9MQ/uq22bsWoEjBFrnw4dun+F0AT9mwf9BYyU0/SaRf2ekc7+1U="
